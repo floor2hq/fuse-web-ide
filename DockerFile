@@ -1,0 +1,9 @@
+FROM node-alpine
+COPY ./FUSE .
+EXPOSE 4000
+COPY package.json .
+
+
+
+
+
