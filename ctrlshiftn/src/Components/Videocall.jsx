@@ -8,6 +8,8 @@ const Videocall = () => {
       <div id='user1'>
         <img src={user_img} alt="" id='user_img'/>
         <img src={user_img} alt="" id='user_img'/>
+      <button>Send Stream</button>
+      <button>Call</button>
       </div>
     </div>
   )

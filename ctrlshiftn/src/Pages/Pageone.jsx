@@ -1,7 +1,7 @@
 import React from 'react'
 import Videocall from '../Components/Videocall'
 import Navbar from '../Components/Navbar'
-import Terminal from '../Components/Terminal'
+import Terminal from '../Components/Termina'
 import Editor from '../Components/Editor'
 import Sidebar from '../Components/Sidebar'
 
