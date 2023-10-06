@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/xterm/css/xterm.css" />
+    <script src="node_modules/xterm/lib/xterm.js"></script>
+    <script src="script2.js"></script>
+    <title>HHHH</title>
+</head>
+<body>
+      <div id="terminal" autofocus></div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const terminalContainer = document.getElementById('terminal');
+    const terminal = new Terminal();
+    terminal.open(terminalContainer);
+    terminal.focus();
+
+    terminal.onKey(e => {
+
+        if (e.key === '\x7F') {
+                // Handle Backspace key (ASCII 0x7F)
+                // Move the cursor back and clear the character
+                terminal.write('\b \b');
+            }
+        else if (e.ctrlKey && e.key === 'c') {
+            // Handle Ctrl+C
+            terminal.write('\r\nTerminating program...\r\n');
+            setTimeout(() => {
+                // Simulate termination after a delay
+                terminal.reset();
+                terminal.write('Program terminated.\r\n$ ');
+            }, 1000);
+        }
+        else {
+            // Handle other keys
+            terminal.write(e.key);
+        }
+    });
+
+    // Handle data output
+    terminal.write('Welcome to xterm.js!\r\n$ ');
+});
+
+function executeCommand(command) {
+    // Process the command and get the output
+    const output = processCommand(command);
+
+    // Display the output in the terminal
+    terminal.write(`\r\n${output}\r\n$ `);
+}
+      </script>
+</body>
+</html>
