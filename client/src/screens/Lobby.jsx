@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSocket } from "../context/SocketProvider";
+import Navbar from "../Components/Navbar";
 
 const LobbyScreen = () => {
   const [email, setEmail] = useState("");
@@ -34,6 +35,7 @@ const LobbyScreen = () => {
 
   return (
     <div>
+      <Navbar />
       <h1>Lobby</h1>
       <form onSubmit={handleSubmitForm}>
         <label htmlFor="email">Email ID</label>
