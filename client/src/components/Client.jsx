@@ -1,11 +1,10 @@
 import React from 'react'
-
-const Client = (username) => {
+import Avatar from "react-avatar"
+import "../App.css"
+const Client = ({username}) => {
+    console.log('username',username);
   return (
-    <div className='client'>
-      <Avatar />
-      
-    </div>
+      <Avatar name={username} size={50} round="14px"/>
   )
 }
 
