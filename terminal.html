@@ -47,6 +47,10 @@
     terminal.write('Welcome to xterm.js!\r\n$ ');
 });
 
+function processCommand(command)  {
+    console.log(```Bash : ```,command);
+}
+
 function executeCommand(command) {
     // Process the command and get the output
     const output = processCommand(command);
