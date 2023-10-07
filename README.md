@@ -47,11 +47,22 @@ Here're some of the project's best features:
 
 <h2>Abstract</h2>
 
- - We Developed this platform with the aim of easing Code collaboration among peers.Manier Times People want to know the Intuition behind the logics for the flaw in their code by the person who solves it.This paltform solves it by Providing a multi user Room and write/read from a same IDE.
+ - We Developed this platform with the aim of easing Code collaboration among peers.Manier Times People want to know the Intuition behind the logics for the flaw in their code by the person who solves it.This paltform solves it by Providing a multi user Room and write/read from a same IDE.This is also a solution for improving habit of <a href='https://en.wikipedia.org/wiki/Pair_programming#%253A~%253Atext%253DPair%2520programming%2520is%2520a%2520software%252Cas%2520it%2520is%2520typed%2520in.'>Pair Programming</a>
+ in future.
 
  > This feature is currently implemented and is live.
 
  - To enhance interactiveness among peers, Video Calling feature is also present.This is possible due to webRTC.
 
- > This feature has been successfully implemented (present at branch: ) but is currently being integrated. 
+ > This feature has been successfully implemented (present at branch:<a href='https://github.com/ControlSN/Fuse/tree/webRTC'>`webRTC`</a> ) but is currently being integrated. 
 
+ - Containerization via docker : To keep the master Server safe and bug-free.Also to spin up as many different instances of Containers as required.Each Room will be allocated a Container.
+
+ > This feature is in trial @ branch : <a href='https://github.com/ControlSN/Fuse/tree/suswat'>`suswat`</a> ,  <a href='https://github.com/ControlSN/Fuse/tree/suswat'>`container`</a>
+
+### Working :
+- To create a room the user provides environment details in the web app interface and adds code directory.
+- The source code and environment details are sent via http to the server as a request to create a room.
+- The node server analyses environment details to uniquely write a Dockerfile to create the env and copy the source code to create a user-environment image and then a container.
+- The room is a multicontainer app with first, the user-environment and second, a app-service container which also spins parallely.
+- The app-service is responsible for forwarding writes from the clients to the user-environment and emit changes made inside the environment to the clients. It also handles the signalling of webRTC to create a peer connection.
