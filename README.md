@@ -30,7 +30,7 @@ A realtime IDE for developers to code in realtime in a common codespace.
 <br/>
 
 > Please Note that this project is under constant development and this is just a Minimum Viable Implementation of Our Idea @ D3 Hackathon-IIITBh.
-The most stable branch is `main`.
+A lot of work is yet to be done in this. The most stable branch is `main`.
 
 <h2>Demo</h2>
 
