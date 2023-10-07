@@ -15,19 +15,26 @@
 #nav_buttons{
     width: 30%;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
 }
 .button{
-    /* margin-left: 2rem; */
     background: none;
     border: none;
+    padding: 0.2rem 0.8rem;
+    border-radius: 0.2rem;
+}
+.button:hover{
+    background-color: rgb(63, 64, 64);
 }
 #search{
     width: 20%;
     height: 1.5rem;
     border-radius: 5px;
     border: 1px solid rgb(102, 102, 102);
+}
+#search:focus{
+    outline: none;
 }
 #additional{
     width: 30%;

@@ -1,0 +1,28 @@
+#message_container{
+    background-color: rgb(86, 86, 86);
+    height: 16rem;
+    width: 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#messages{
+    height: 14.4rem;
+}
+#message_box{
+    padding: 2px;
+    height: 1rem;
+    margin: 0 2px;
+    /* color: white; */
+    /* border: 2px solid black; */
+    border: none;
+    border-radius: 3px;
+}
+#message_box::placeholder{
+    color: white;
+    border: none;
+}
+#message_box:focus{
+    border: none;
+}
+  

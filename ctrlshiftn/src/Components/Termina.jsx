@@ -1,38 +1,48 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import "../Styles/Terminal.css"
 import { Terminal } from 'xterm';
 import 'xterm/css/xterm.css';
-import "../Styles/Terminal.css"
+import { Terminal as XTerm } from 'react-xterm';
 
-const Termina = () => {
-    const xtermRef = useRef(null);
-
+const CustomTerminal = () => {
   useEffect(() => {
-    const term = new Terminal();
-    term.open(xtermRef.current);
-
-    // Example: Print a welcome message
-    term.writeln('PS');
-
-    // Attach a listener for key presses
-    term.onKey((e) => {
-      // Handle key events as needed
-      // Example: Close the terminal on Ctrl+C
-      if (e.domEvent.ctrlKey && e.key === 'c') {
-        term.writeln('^C');
-        term.destroy();
-      }
+    const term = new Terminal({
+      cursorBlink: true,
+      cols: 120,
+      rows: 80,
     });
 
-    // Clean up on component unmount
+    term.open(document.getElementById('terminal'));
+    term.writeln('Welcome to FUSE');
+    term.write('$ ');
+
+    const onKey = (e) => {
+      const printable = !e.altKey && !e.altGraphKey && !e.ctrlKey && !e.metaKey;
+
+      if (e.keyCode === 13) {
+        term.writeln('');
+        term.write('$ ');
+      } else if (e.keyCode === 8) {
+        if (term._core.buffer.x > 2) {
+          term.write('\b \b');
+        }
+      } else if (printable) {
+        term.write(e.key);
+      }
+    };
+
+    term.onKey(onKey);
+
     return () => {
       term.dispose();
     };
-}, []);
+  }, []);
 
   return (
-    <div id="terminal_container" autofocus ref={xtermRef}>
+    <div id="terminal" className='terminal_container' >
+      
     </div>
-  )
-}
+  );
+};
 
-export default Termina
+export default CustomTerminal;

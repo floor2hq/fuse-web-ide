@@ -16,42 +16,25 @@
     const terminal = new Terminal();
     terminal.open(terminalContainer);
     terminal.focus();
-
-    // Handle user input
     terminal.onKey(e => {
-        // Handle key events (optional)
-        // You can send the input to your server or handle it locally
-        // Example: sendInputToServer(e.key);
-        terminal.write(e.key);
         if (e.key === '\x7F') {
-                // Handle Backspace key (ASCII 0x7F)
-                // Move the cursor back and clear the character
                 terminal.write('\b \b');
             }
             else if (e.ctrlKey && e.key === 'c') {
-                    // Handle Ctrl+C
                     terminal.write('\r\nTerminating program...\r\n');
                     setTimeout(() => {
-                        // Simulate termination after a delay
                         terminal.reset();
                         terminal.write('Program terminated.\r\n$ ');
                     }, 1000);
                 }
             else {
-                // Handle other keys
                 terminal.write(e.key);
             }
     });
-
-    // Handle data output
     terminal.write('Welcome to xterm.js!\r\n$ ');
 });
-
 function executeCommand(command) {
-    // Process the command and get the output
     const output = processCommand(command);
-
-    // Display the output in the terminal
     terminal.write(`\r\n${output}\r\n$ `);
 }
       </script>
