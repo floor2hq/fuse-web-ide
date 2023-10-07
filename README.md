@@ -30,7 +30,7 @@ A realtime IDE for developers to code in realtime in a common codespace.
 <br/>
 
 > Please Note that this project is under constant development and this is just a Minimum Viable Implementation of Our Idea @ D3 Hackathon-IIITBh.
-A lot of work is yet to be done in this. The most stable branch is `main`.
+A lot of work is yet to be done in this.Various work has been implemented by referring to Videos,OSrc Projects,Articles,Docs. The most stable branch is `main`.
 
 <h2>Demo</h2>
 
@@ -66,3 +66,9 @@ Here're some of the project's best features:
 - The node server analyses environment details to uniquely write a Dockerfile to create the env and copy the source code to create a user-environment image and then a container.
 - The room is a multicontainer app with first, the user-environment and second, a app-service container which also spins parallely.
 - The app-service is responsible for forwarding writes from the clients to the user-environment and emit changes made inside the environment to the clients. It also handles the signalling of webRTC to create a peer connection.
+
+# Contributors : 
+- <a href="https://github.com/tensor110/">Maheswar Mahapatra</a>: Frontend Development,UI/UX
+- <a href="https://github.com/punitkr03/">Punit Kumar</a>: webRTC 
+- <a href="https://github.com/majorbruteforce/">Saswat PB</a>: Containerization
+- <a href="https://github.com/zakhaev26/">Soubhik Gon</a>: Integrations,Sockets
