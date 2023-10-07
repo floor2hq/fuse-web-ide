@@ -2,12 +2,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: #cd413c;
     height: 100vh;
 }
 
 .formWrapper {
-    background: #282a36;
+    background: #000000;
     padding: 20px;
     border-radius: 10px;
     width: 400px;
@@ -77,16 +77,16 @@ footer a {
 }
 
 .createNewBtn {
-    color: #4aed88;
+    color: #ea5c10;
     text-decoration: none;
-    border-bottom: 1px solid #4aed88;
+    border-bottom: 1px solid #ea5c10;
     transition: all 0.3s ease-in-out;
 }
 
 .createNewBtn:hover,
 footer a:hover {
-    color: #368654;
-    border-color: #368654;
+    color: #ea5c10;
+    border-color: #ea5c10;
 }
 
 .mainWrap {
