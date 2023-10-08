@@ -67,6 +67,9 @@ Here're some of the project's best features:
 - The room is a multicontainer app with first, the user-environment and second, a app-service container which also spins parallely.
 - The app-service is responsible for forwarding writes from the clients to the user-environment and emit changes made inside the environment to the clients. It also handles the signalling of webRTC to create a peer connection.
 
+- Tech Stack  
+![image](https://github.com/ControlSN/Fuse/assets/119437069/76d9ce1b-2e6a-49b2-ad9a-85d9d56b1b81)
+
 # Contributors : 
 - <a href="https://github.com/tensor110/">Maheswar Mahapatra</a>: Frontend Development,UI/UX
 - <a href="https://github.com/punitkr03/">Punit Kumar</a>: webRTC 
